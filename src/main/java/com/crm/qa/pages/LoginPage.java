@@ -9,7 +9,7 @@ import com.crm.qa.base.TestBase;
 
 public class LoginPage extends TestBase{
 	
-	//Page Factory (Object Repository)
+	//Page Factory (Object Repository)--->
 	
 	@FindBy(id="email")
 	@CacheLookup
