@@ -1,23 +1,23 @@
 package com.crm.qa.testcases;
 
-import java.io.IOException;
-
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.TestUtil;
 
 public class LoginPageTest extends TestBase{
 	LoginPage loginPage;
 	HomePage homePage;
 
+	//Logger log = Logger.getLogger(LoginPageTest.class);
+	Logger log = LogManager.getLogger(LoginPageTest.class);
+	
 	public LoginPageTest() {
 		super();
 	}
@@ -30,19 +30,25 @@ public class LoginPageTest extends TestBase{
 	
 	
 	
-	  @Test(priority=1) public void loginPageTitleTest() { String title =
+	  @Test(priority=1) 
+	  public void loginPageTitleTest() { String title =
 	  loginPage.getPageTitle(); Assert.assertEquals(title,
 	  "Facebook – log in or sign up");
 	  
-	  }
-	  
-	  @Test(priority=2) public void fbLogoImageTest() { boolean flag =
-	  loginPage.validateFBImage(); Assert.assertTrue(flag); }
-	  
-	  @Test(priority=3) public void loginTest() { homePage =
-	  loginPage.login(prop.getProperty("username"), prop.getProperty("passwoord"));
-	  }
-	 
+	    log.info("entering application URL");
+		log.warn("Hey this just a warning message");
+		log.fatal("hey this is just fatal error message....**************");
+		log.debug("this is debug message");
+		
+  }
+//	  
+//	  @Test(priority=2) public void fbLogoImageTest() { boolean flag =
+//	  loginPage.validateFBImage(); Assert.assertTrue(flag); }
+//	  
+//	  @Test(priority=3) public void loginTest() { homePage =
+//	  loginPage.login(prop.getProperty("username"), prop.getProperty("passwoord"));
+//	  }
+//	 
 	
 		/*
 		 * @DataProvider public Object[][] getTestData() { Object data[][] = null; try {
